@@ -11,7 +11,7 @@ Garden Simulator
  
 DESCRIPTION
  
-Main.CPP
+Flower.H // NEED TO UPDATE THIS IN ALL FILES
 
 */
 
@@ -20,6 +20,8 @@ Main.CPP
 
 #include <stdio.h>
 #include "Plant.h"
+
+// GET RID OF MAGIC NUMBERS
 
 class Flower : public Plant {
     
@@ -33,18 +35,20 @@ public:
     
     virtual void printStage() {
         Plant::printStage();
-        cout << setw(15) << "Blooms = " << blooms << "\n";
+        cout << setw(22) << "Number of Blooms = " << blooms << "\n";
     } // end printStage()
 
     virtual void careFor() {
         int chosenAction;
         
-        cout << "    1 - Water\n"
+        cout << "\nWould you like to care for this flower?\n"
+             << "    0 - No Action\n"
+             << "    1 - Water\n"
              << "    2 - Weed\n"
              << "    3 - Fertilize\n"
-             << "    4 - Cut Blooms\n";
-        cout << "How would you like to care for this flower? ";
-        cin >> chosenAction;
+             << "    4 - Cut Blooms\n"
+             << "I would like to take action number: ";
+        cin >> chosenAction; // SHOULD THIS BE A WORD NOT AN INT?
         while (chosenAction != 0) {
             
             switch (chosenAction) {
@@ -61,15 +65,10 @@ public:
                     cutBlooms();
                     break;
                 default:
+                    cout << "   * Another week goes by! * ";
                     break;
             }
-            
-            cout << "    1 - Water\n"
-            << "    2 - Weed\n"
-            << "    3 - Fertilize\n"
-            << "    4 - Cut Blooms\n"
-            << "    0 - Exit\n";
-            cout << "How would you like to care for this flower? ";
+            cout << "I would like to take action number: ";
             cin >> chosenAction;
         }
         
@@ -77,20 +76,27 @@ public:
     
     void addBloom() {
         blooms = blooms + 1;
+        cout << " - A bloom grew!";
     }
     
     void cutBlooms() {
-        cout << "Cut " << blooms << " blooms!";
         blooms = 0;
+        cout << "   * Cut blooms! Blooms = " << blooms << " *\n";
     }
     
     virtual void grow() {
-        if (getWeedCount() == 0 && getFertilizerLevel() > 0 && getDampness() > 0) {
-            addHeight(1);
-            if (getHeight() > 2) {
+        srand((int)time(0));
+        cout << "\nThroughout the week:\n"; // SHOULD THIS BE HERE?
+        // COULD REFINE THESE RANGES
+        if (getWeedCount() < 2 && getFertilizerLevel() > 0 && getWaterLevel() > 0) {
+            addHeight(1); // SHOULD THERE BE A MAX HEIGHT?
+            if (getHeight() > 2 && rand() % 2 == 0) {
                 addBloom();
             }
+        } else if (rand() % 5 == 0){
+            cout << " - A plant died!! :'(\n"; // NEED TO DECONSTRUCT? WHAT HAPPENS TO VECTOR?
         }
+        passTime();
     }
 
     

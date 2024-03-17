@@ -20,6 +20,7 @@ Main.CPP
 
 #include <iostream>
 #include <iomanip>
+#include <time.h>
 
 
 using std::cout;
@@ -33,12 +34,12 @@ public:
     
     // CONSTRUCTOR
     Plant()
-    : height{0}, dampness{0}, weedCount{0}, fertilizerLevel{0} {
+    : height{0}, waterLevel{0}, weedCount{0}, fertilizerLevel{0} {
         cout << "Planted ";
     } // end Plant() constructor
     
-    const int getDampness() {
-        return dampness;
+    const int getWaterLevel() {
+        return waterLevel;
     }
     const int getFertilizerLevel() {
         return fertilizerLevel;
@@ -52,34 +53,55 @@ public:
     
     void addHeight(int additionalHeight) {
         height = height + additionalHeight;
+        cout << " - A plant grew!\n";
     }
     
     virtual void printStage() {
-        
-        cout << setw(15) << right << "Height = " << height << "\n";
-        cout << setw(15) << "Dampness = " << dampness << "\n";
-        cout << setw(15) << "Weeds = " << weedCount<< "\n";
-        cout << setw(15) << "Fertilizer = " << fertilizerLevel << "\n";
+        // REORDER THESE
+        cout << setw(22) << right << "Plant Height = " << height << "\n";
+        cout << setw(22) << "Water Level = " << waterLevel << "\n";
+        cout << setw(22) << "Number of Weeds = " << weedCount<< "\n";
+        cout << setw(22) << "Fertilizer Level = " << fertilizerLevel << "\n";
     } // end printStage()
     
     virtual void careFor() = 0; // eventually turn this into a printCareFor and getCareFor and make base implementation
     
     void addWater() {
-        dampness = dampness + 1;
+        waterLevel = waterLevel + 2;
+        cout << "   * Watered the plant! Water = " << waterLevel << " *\n";
     } // end water()
 
     void removeWeed() {
         weedCount = weedCount - 1;
-    } // end weed()
+        cout << "   * Weeded the plant! Weed = " << weedCount << " *\n";
+    } // end removeWeed()
     
     void addFertilize() {
-        fertilizerLevel = fertilizerLevel + 1;
+        fertilizerLevel = fertilizerLevel + 2;
+        cout << "   * Fertilized the plant! Fertilizer Level = " << fertilizerLevel << " *\n";
     } // end fertilize()
+    
+    void addWeed() {
+        weedCount = weedCount + 1;
+        cout << " - A weed grew!\n";
+    }
     
     virtual void grow() = 0;
     
+    void passTime() {
+        srand((int)time(0));
+        waterLevel = waterLevel - 1;
+        if (rand() % 2 == 0 && fertilizerLevel > 0) {
+            fertilizerLevel = fertilizerLevel - 1;
+        }
+        if (rand() % 3 == 0) {
+            addWeed();
+        }
+    }
+    
+    
 private:
-    int dampness;
+    int waterLevel;
     int weedCount;
     int fertilizerLevel;
     int height;

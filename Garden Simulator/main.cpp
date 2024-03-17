@@ -27,7 +27,6 @@ using std::vector;
 
 int main() {
     const int MAX_WEEKS = 10;
-    int chosenPlant = 0;
     
     // Plant a flower
     Flower sunflower;
@@ -43,23 +42,17 @@ int main() {
     
     // Days to pass
     for (int week = 1; week <= MAX_WEEKS; week++) {
-        cout << "\n---------- Week " << week << " ----------\n";
+        cout << "\n\n---------- Week " << week << " ----------\n";
         // Print garden
         for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
             cout << "Plant #" << currentPlant + 1 << ":\n";
             myGarden[currentPlant]->printStage();
+            myGarden[currentPlant]->careFor();
+            myGarden[currentPlant]->grow(); // may need to move this to its own for loop?
         }
-        // Option to water plants
-        cout << "\nEnter 0 to do nothing, or a plant number to care for it: ";
-        cin >> chosenPlant;
-        while (chosenPlant != 0) {
-            myGarden[chosenPlant - 1]->careFor(); // EXCEPTINO HANDLING!??
-            cout << "\nEnter 0 to do nothing, or a plant number to care for it: ";
-            cin >> chosenPlant;
-        }
-        // overnight()
     }
     
+    // FINAL MESSAGE?
     
     cout << "\n\n";
     
