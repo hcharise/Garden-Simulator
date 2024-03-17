@@ -1,14 +1,23 @@
-//
-//  main.cpp
-//  Garden Simulator
-//
-//  Created by Hannah Ashton on 3/17/24.
-//
+/*
+Hannah Ashton
+
+Professor Jonathan S. Weissman
+CIS 554-M401 Object Oriented Programming in C++
+
+Syracuse University
+Final Project - Demonstration of Inheritance and Polymorphism
+Garden Simulator
+3/26/2024
+ 
+DESCRIPTION
+ 
+Main.CPP
+
+*/
+
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main() {
+    
 }

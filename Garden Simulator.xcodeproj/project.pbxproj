@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BB6838C82BA751D5008923B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838C72BA751D5008923B0 /* main.cpp */; };
+		BB6838D02BA75221008923B0 /* Plant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838CE2BA75221008923B0 /* Plant.cpp */; };
+		BB6838D32BA7522F008923B0 /* Flower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838D12BA7522F008923B0 /* Flower.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		BB6838C42BA751D5008923B0 /* Garden Simulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Garden Simulator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB6838C72BA751D5008923B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BB6838CE2BA75221008923B0 /* Plant.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Plant.cpp; sourceTree = "<group>"; };
+		BB6838CF2BA75221008923B0 /* Plant.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Plant.hpp; sourceTree = "<group>"; };
+		BB6838D12BA7522F008923B0 /* Flower.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Flower.cpp; sourceTree = "<group>"; };
+		BB6838D22BA7522F008923B0 /* Flower.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Flower.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				BB6838C72BA751D5008923B0 /* main.cpp */,
+				BB6838CE2BA75221008923B0 /* Plant.cpp */,
+				BB6838CF2BA75221008923B0 /* Plant.hpp */,
+				BB6838D12BA7522F008923B0 /* Flower.cpp */,
+				BB6838D22BA7522F008923B0 /* Flower.hpp */,
 			);
 			path = "Garden Simulator";
 			sourceTree = "<group>";
@@ -119,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6838D32BA7522F008923B0 /* Flower.cpp in Sources */,
 				BB6838C82BA751D5008923B0 /* main.cpp in Sources */,
+				BB6838D02BA75221008923B0 /* Plant.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
