@@ -19,10 +19,13 @@ Main.CPP
 #define PLANT_H
 
 #include <iostream>
+#include <iomanip>
+
 
 using std::cout;
 using std::cin;
-
+using std::setw;
+using std::right;
 
 class Plant {
     
@@ -30,24 +33,56 @@ public:
     
     // CONSTRUCTOR
     Plant()
-    : age{0}, dampness{0} {
-        cout << "Planted!\n";
+    : height{0}, dampness{0}, weedCount{0}, fertilizerLevel{0} {
+        cout << "Planted ";
     } // end Plant() constructor
     
-    // GETTERS
-    int getAge() const {
-        return age;
-    } // end getAge()
-    
-    int getDampness() const {
+    const int getDampness() {
         return dampness;
-    } // end getAge()
+    }
+    const int getFertilizerLevel() {
+        return fertilizerLevel;
+    }
+    const int getWeedCount() {
+        return weedCount;
+    }
+    const int getHeight() {
+        return height;
+    }
     
+    void addHeight(int additionalHeight) {
+        height = height + additionalHeight;
+    }
+    
+    virtual void printStage() {
+        
+        cout << setw(15) << right << "Height = " << height << "\n";
+        cout << setw(15) << "Dampness = " << dampness << "\n";
+        cout << setw(15) << "Weeds = " << weedCount<< "\n";
+        cout << setw(15) << "Fertilizer = " << fertilizerLevel << "\n";
+    } // end printStage()
+    
+    virtual void careFor() = 0; // eventually turn this into a printCareFor and getCareFor and make base implementation
+    
+    void addWater() {
+        dampness = dampness + 1;
+    } // end water()
+
+    void removeWeed() {
+        weedCount = weedCount - 1;
+    } // end weed()
+    
+    void addFertilize() {
+        fertilizerLevel = fertilizerLevel + 1;
+    } // end fertilize()
+    
+    virtual void grow() = 0;
     
 private:
-    int age;
     int dampness;
-    
+    int weedCount;
+    int fertilizerLevel;
+    int height;
 };
 
 #endif /* PLANT_H */
