@@ -28,9 +28,9 @@
 		BB6838C42BA751D5008923B0 /* Garden Simulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Garden Simulator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB6838C72BA751D5008923B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BB6838CE2BA75221008923B0 /* Plant.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Plant.cpp; sourceTree = "<group>"; };
-		BB6838CF2BA75221008923B0 /* Plant.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Plant.hpp; sourceTree = "<group>"; };
+		BB6838CF2BA75221008923B0 /* Plant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plant.h; sourceTree = "<group>"; };
 		BB6838D12BA7522F008923B0 /* Flower.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Flower.cpp; sourceTree = "<group>"; };
-		BB6838D22BA7522F008923B0 /* Flower.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Flower.hpp; sourceTree = "<group>"; };
+		BB6838D22BA7522F008923B0 /* Flower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flower.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,9 @@
 			children = (
 				BB6838C72BA751D5008923B0 /* main.cpp */,
 				BB6838CE2BA75221008923B0 /* Plant.cpp */,
-				BB6838CF2BA75221008923B0 /* Plant.hpp */,
+				BB6838CF2BA75221008923B0 /* Plant.h */,
 				BB6838D12BA7522F008923B0 /* Flower.cpp */,
-				BB6838D22BA7522F008923B0 /* Flower.hpp */,
+				BB6838D22BA7522F008923B0 /* Flower.h */,
 			);
 			path = "Garden Simulator";
 			sourceTree = "<group>";

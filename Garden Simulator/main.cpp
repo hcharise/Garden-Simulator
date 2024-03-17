@@ -17,7 +17,41 @@ Main.CPP
 
 
 #include <iostream>
+#include <array>
+
+#include "Plant.h"
+#include "Flower.h" // SHOULD THIS BE INCLUDED HERE? WHERE?
+
+using std::array;
+
 
 int main() {
+    
+    // Plant a flower
+    Flower sunflower;
+    
+    // Plant a vegetable
+    
+    // Plant a tree
+    
+    
+    // Instantiate garden as an array
+    // array <Plant*, 3> myGarden;
+    
+    //
+    
+    //
+    
+    // While loop for days to pass
+        // Print garden
+    
+    
+        // Option to water plants
+    
+    
+        //
+    
+    
+    
     
 }
