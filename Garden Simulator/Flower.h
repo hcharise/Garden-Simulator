@@ -38,45 +38,32 @@ public:
         cout << setw(22) << "Number of Blooms = " << blooms << "\n";
     } // end printStage()
 
-    virtual void careFor() {
-        int chosenAction;
-        
-        cout << "\nWould you like to care for this flower?\n"
-             << "    0 - No Action\n"
-             << "    1 - Water\n"
-             << "    2 - Weed\n"
-             << "    3 - Fertilize\n"
-             << "    4 - Cut Blooms\n"
-             << "I would like to take action number: ";
-        cin >> chosenAction; // SHOULD THIS BE A WORD NOT AN INT?
+    virtual void printCareOptions(int plantNumber) {
+        Plant::printCareOptions(plantNumber);
+        cout << "    4 - Cut Blooms\n";
+    } // end printCareOptions()
+    
+    virtual int careFor(int plantNumber) {
+        printCareOptions(plantNumber);
+        int chosenAction = Plant::careFor(plantNumber);
+
         while (chosenAction != 0) {
-            
+
             switch (chosenAction) {
-                case(1):
-                    addWater();
-                    break;
-                case(2):
-                    removeWeed();
-                    break;
-                case(3):
-                    addFertilize();
-                    break;
                 case(4):
                     cutBlooms();
                     break;
                 default:
-                    cout << "   * Another week goes by! * ";
                     break;
             }
-            cout << "I would like to take action number: ";
-            cin >> chosenAction;
+            chosenAction = Plant::careFor(plantNumber);
         }
-        
-    } // end printStage()
+        return 0; // unused return value
+    }
     
     void addBloom() {
         blooms = blooms + 1;
-        cout << " - A bloom grew!";
+        cout << " - A bloom grew!\n";
     }
     
     void cutBlooms() {

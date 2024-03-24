@@ -57,14 +57,39 @@ public:
     }
     
     virtual void printStage() {
-        // REORDER THESE
         cout << setw(22) << right << "Plant Height = " << height << "\n";
         cout << setw(22) << "Water Level = " << waterLevel << "\n";
-        cout << setw(22) << "Number of Weeds = " << weedCount<< "\n";
         cout << setw(22) << "Fertilizer Level = " << fertilizerLevel << "\n";
+        cout << setw(22) << "Number of Weeds = " << weedCount<< "\n";
     } // end printStage()
     
-    virtual void careFor() = 0; // eventually turn this into a printCareFor and getCareFor and make base implementation
+    virtual void printCareOptions(int plantNumber) {
+        cout << "\nCare Options for Plant " << plantNumber << ":\n"
+             << "    0 - No Action\n"
+             << "    1 - Water\n"
+             << "    2 - Fertilize\n"
+             << "    3 - Weed\n";
+    }
+    
+    virtual int careFor(int plantNumber) {
+        cout << "I would like to take action number: ";
+        int chosenAction;
+        cin >> chosenAction; // SHOULD THIS BE A WORD NOT AN INT?
+        switch (chosenAction) {
+            case(1):
+                addWater();
+                break;
+            case(2):
+                addFertilizer();
+                break;
+            case(3):
+                removeWeed();
+                break;
+            default:
+                break;
+        }
+        return chosenAction;
+    }
     
     void addWater() {
         waterLevel = waterLevel + 2;
@@ -76,7 +101,7 @@ public:
         cout << "   * Weeded the plant! Weed = " << weedCount << " *\n";
     } // end removeWeed()
     
-    void addFertilize() {
+    void addFertilizer() {
         fertilizerLevel = fertilizerLevel + 2;
         cout << "   * Fertilized the plant! Fertilizer Level = " << fertilizerLevel << " *\n";
     } // end fertilize()
@@ -102,8 +127,8 @@ public:
     
 private:
     int waterLevel;
-    int weedCount;
     int fertilizerLevel;
+    int weedCount;
     int height;
 };
 

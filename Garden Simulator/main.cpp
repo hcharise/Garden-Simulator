@@ -47,13 +47,18 @@ int main() {
         for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
             cout << "Plant #" << currentPlant + 1 << ":\n";
             myGarden[currentPlant]->printStage();
-            myGarden[currentPlant]->careFor();
+        }
+        for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
+            myGarden[currentPlant]->careFor(currentPlant + 1);
             myGarden[currentPlant]->grow(); // may need to move this to its own for loop?
         }
     }
     
-    // FINAL MESSAGE?
-    
-    cout << "\n\n";
+    cout << "\n\n---------- END ----------\n";
+    for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
+        cout << "Plant #" << currentPlant + 1 << ":\n";
+        myGarden[currentPlant]->printStage();
+    }
+    cout << "\nGreat gardening!\n\n";
     
 }
