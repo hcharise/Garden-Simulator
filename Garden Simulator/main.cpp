@@ -22,12 +22,17 @@ Main.CPP
 #include "Plant.h"
 #include "Flower.h"
 #include "Vegetable.h"
+#include "Shrub.h"
 
 using std::vector;
 
 
 int main() {
     const int MAX_WEEKS = 5;
+    
+    cout << "----------------------------------------------------\n"
+         << "             Garden-Like-A-Granny Game              "
+        << "----------------------------------------------------\n\n";
     
     // Plant a flower
     Flower sunflower("Sunflower");
@@ -37,10 +42,12 @@ int main() {
     Vegetable pepper("Pepper");
     Plant * pepperPtr{&pepper};
     
-    // Plant a tree
+    // Plant a shrub
+    Shrub boxwood("Boxwood");
+    Plant * boxwoodPtr{&boxwood};
     
     // Instantiate garden as an array
-    vector <Plant*> myGarden = {sunflowerPtr, pepperPtr};
+    vector <Plant*> myGarden = {sunflowerPtr, pepperPtr, boxwoodPtr};
 
     
     // Days to pass

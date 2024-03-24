@@ -11,6 +11,7 @@
 		BB6838D02BA75221008923B0 /* Plant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838CE2BA75221008923B0 /* Plant.cpp */; };
 		BB6838D32BA7522F008923B0 /* Flower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838D12BA7522F008923B0 /* Flower.cpp */; };
 		BBEDA4752BB0D1170024C8ED /* Vegetable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBEDA4732BB0D1160024C8ED /* Vegetable.cpp */; };
+		BBEDA4782BB0E84F0024C8ED /* Shrub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBEDA4762BB0E84F0024C8ED /* Shrub.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		BB6838D22BA7522F008923B0 /* Flower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flower.h; sourceTree = "<group>"; };
 		BBEDA4732BB0D1160024C8ED /* Vegetable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vegetable.cpp; sourceTree = "<group>"; };
 		BBEDA4742BB0D1170024C8ED /* Vegetable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vegetable.h; sourceTree = "<group>"; };
+		BBEDA4762BB0E84F0024C8ED /* Shrub.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shrub.cpp; sourceTree = "<group>"; };
+		BBEDA4772BB0E84F0024C8ED /* Shrub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shrub.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				BB6838D22BA7522F008923B0 /* Flower.h */,
 				BBEDA4732BB0D1160024C8ED /* Vegetable.cpp */,
 				BBEDA4742BB0D1170024C8ED /* Vegetable.h */,
+				BBEDA4762BB0E84F0024C8ED /* Shrub.cpp */,
+				BBEDA4772BB0E84F0024C8ED /* Shrub.h */,
 			);
 			path = "Garden Simulator";
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				BB6838D32BA7522F008923B0 /* Flower.cpp in Sources */,
 				BBEDA4752BB0D1170024C8ED /* Vegetable.cpp in Sources */,
 				BB6838C82BA751D5008923B0 /* main.cpp in Sources */,
+				BBEDA4782BB0E84F0024C8ED /* Shrub.cpp in Sources */,
 				BB6838D02BA75221008923B0 /* Plant.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

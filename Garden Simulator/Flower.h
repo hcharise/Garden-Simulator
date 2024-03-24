@@ -21,8 +21,6 @@ Flower.H // NEED TO UPDATE THIS IN ALL FILES
 #include <stdio.h>
 #include "Plant.h"
 
-// GET RID OF MAGIC NUMBERS
-
 class Flower : public Plant {
 
 public:
