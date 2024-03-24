@@ -22,7 +22,7 @@ Main.CPP
 #include <iomanip>
 #include <time.h>
 
-
+using std::string;
 using std::cout;
 using std::cin;
 using std::setw;
@@ -33,10 +33,14 @@ class Plant {
 public:
     
     // CONSTRUCTOR
-    Plant()
-    : height{0}, waterLevel{0}, weedCount{0}, fertilizerLevel{0} {
+    Plant(string enteredName)
+    : plantName{enteredName}, height{0}, waterLevel{0}, weedCount{0}, fertilizerLevel{0} {
         cout << "Planted ";
     } // end Plant() constructor
+    
+    const string getPlantName() {
+        return plantName;
+    }
     
     const int getWaterLevel() {
         return waterLevel;
@@ -53,7 +57,6 @@ public:
     
     void addHeight(int additionalHeight) {
         height = height + additionalHeight;
-        cout << " - A plant grew!\n";
     }
     
     virtual void printStage() {
@@ -108,7 +111,6 @@ public:
     
     void addWeed() {
         weedCount = weedCount + 1;
-        cout << " - A weed grew!\n";
     }
     
     virtual void grow() = 0;
@@ -126,6 +128,7 @@ public:
     
     
 private:
+    string plantName;
     int waterLevel;
     int fertilizerLevel;
     int weedCount;

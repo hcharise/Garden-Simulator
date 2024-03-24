@@ -11,35 +11,35 @@ Garden Simulator
  
 DESCRIPTION
  
-Flower.H // NEED TO UPDATE THIS IN ALL FILES
+Vegetable.H // NEED TO UPDATE THIS IN ALL FILES
 
 */
 
-#ifndef FLOWER_H
-#define FLOWER_H
+#ifndef VEGETABLE_H
+#define VEGETABLE_H
 
 #include <stdio.h>
 #include "Plant.h"
 
 // GET RID OF MAGIC NUMBERS
 
-class Flower : public Plant {
+class Vegetable : public Plant {
 
 public:
     // CONSTRUCTOR
-    Flower(string enteredName)
-    : Plant(enteredName), blooms{0} {
-        cout << "a flower called " << Plant::getPlantName() << "!\n";
-    } // end Flower() constructor
+    Vegetable(string enteredName)
+    : Plant(enteredName), veggies{0} {
+        cout << "a vegetable called " << Plant::getPlantName() << "!\n";
+    } // end Vegetable() constructor
     
     virtual void printStage() {
         Plant::printStage();
-        cout << setw(22) << "Number of Blooms = " << blooms << "\n";
+        cout << setw(22) << "Number of Veggies = " << veggies << "\n";
     } // end printStage()
 
     virtual void printCareOptions(int plantNumber) {
         Plant::printCareOptions(plantNumber);
-        cout << "    4 - Cut Blooms\n";
+        cout << "    4 - Harvest Veggies\n";
     } // end printCareOptions()
     
     virtual int careFor(int plantNumber) {
@@ -50,7 +50,7 @@ public:
 
             switch (chosenAction) {
                 case(4):
-                    cutBlooms();
+                    harvestVeggies();
                     break;
                 default:
                     break;
@@ -60,29 +60,29 @@ public:
         return 0; // unused return value
     }
     
-    void addBloom() {
-        blooms = blooms + 1;
+    void addVeggie() {
+        veggies = veggies + 1;
     }
     
-    void cutBlooms() {
-        cout << "   * Cut " << blooms << " blooms!";
-        blooms = 0;
-        cout << " Blooms = " << blooms << " *\n";
+    void harvestVeggies() {
+        cout << "   * Harvested " << veggies << " veggies!";
+        veggies = 0;
+        cout << " Veggies = " << veggies << " *\n";
     }
     
     virtual void grow() {
         srand((int)time(0));
-        if (getWeedCount() < 2 && getFertilizerLevel() > 0 && getFertilizerLevel() < 4 && getWaterLevel() > 1 && getWaterLevel() < 5) {
-            addHeight(1);
-            if (getHeight() > 2 && rand() % 3 == 0) {
-                addBloom();
+        if (getWeedCount() < 3 && getFertilizerLevel() > 1 && getFertilizerLevel() < 5 && getWaterLevel() > 2 && getWaterLevel() < 6) {
+            addHeight(2);
+            if (getHeight() > 3 && rand() % 2 == 0) {
+                addVeggie();
             }
         }
         passTime();
     }
 
 private:
-    int blooms;
+    int veggies;
 };
 
-#endif /* FLOWER_H */
+#endif /* VEGETABLE_H */

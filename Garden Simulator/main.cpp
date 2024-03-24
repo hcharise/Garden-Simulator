@@ -20,43 +20,45 @@ Main.CPP
 #include <vector>
 
 #include "Plant.h"
-#include "Flower.h" // SHOULD THIS BE INCLUDED HERE? WHERE?
+#include "Flower.h"
+#include "Vegetable.h"
 
 using std::vector;
 
 
 int main() {
-    const int MAX_WEEKS = 10;
+    const int MAX_WEEKS = 5;
     
     // Plant a flower
-    Flower sunflower;
+    Flower sunflower("Sunflower");
     Plant * sunflowerPtr{&sunflower};
     
     // Plant a vegetable
+    Vegetable pepper("Pepper");
+    Plant * pepperPtr{&pepper};
     
     // Plant a tree
     
     // Instantiate garden as an array
-    vector <Plant*> myGarden = {sunflowerPtr};
+    vector <Plant*> myGarden = {sunflowerPtr, pepperPtr};
 
     
     // Days to pass
     for (int week = 1; week <= MAX_WEEKS; week++) {
-        cout << "\n\n---------- Week " << week << " ----------\n";
+        cout << "\n---------------------- WEEK " << week << " ----------------------\n";
         // Print garden
         for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
-            cout << "Plant #" << currentPlant + 1 << ":\n";
+            cout << "\nPLANT #" << currentPlant + 1 << ": "
+                 << myGarden[currentPlant]->getPlantName() << "\n";
             myGarden[currentPlant]->printStage();
-        }
-        for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
             myGarden[currentPlant]->careFor(currentPlant + 1);
-            myGarden[currentPlant]->grow(); // may need to move this to its own for loop?
+            myGarden[currentPlant]->grow();
         }
     }
     
-    cout << "\n\n---------- END ----------\n";
+    cout << "\n\n------------------------ END -----------------------\n";
     for (int currentPlant = 0; currentPlant < myGarden.size(); currentPlant++) {
-        cout << "Plant #" << currentPlant + 1 << ":\n";
+        cout << "\nPLANT #" << currentPlant + 1 << ":\n";
         myGarden[currentPlant]->printStage();
     }
     cout << "\nGreat gardening!\n\n";

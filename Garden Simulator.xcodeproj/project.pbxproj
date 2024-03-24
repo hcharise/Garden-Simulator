@@ -10,6 +10,7 @@
 		BB6838C82BA751D5008923B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838C72BA751D5008923B0 /* main.cpp */; };
 		BB6838D02BA75221008923B0 /* Plant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838CE2BA75221008923B0 /* Plant.cpp */; };
 		BB6838D32BA7522F008923B0 /* Flower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB6838D12BA7522F008923B0 /* Flower.cpp */; };
+		BBEDA4752BB0D1170024C8ED /* Vegetable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBEDA4732BB0D1160024C8ED /* Vegetable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		BB6838CF2BA75221008923B0 /* Plant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plant.h; sourceTree = "<group>"; };
 		BB6838D12BA7522F008923B0 /* Flower.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Flower.cpp; sourceTree = "<group>"; };
 		BB6838D22BA7522F008923B0 /* Flower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flower.h; sourceTree = "<group>"; };
+		BBEDA4732BB0D1160024C8ED /* Vegetable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vegetable.cpp; sourceTree = "<group>"; };
+		BBEDA4742BB0D1170024C8ED /* Vegetable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vegetable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				BB6838CF2BA75221008923B0 /* Plant.h */,
 				BB6838D12BA7522F008923B0 /* Flower.cpp */,
 				BB6838D22BA7522F008923B0 /* Flower.h */,
+				BBEDA4732BB0D1160024C8ED /* Vegetable.cpp */,
+				BBEDA4742BB0D1170024C8ED /* Vegetable.h */,
 			);
 			path = "Garden Simulator";
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB6838D32BA7522F008923B0 /* Flower.cpp in Sources */,
+				BBEDA4752BB0D1170024C8ED /* Vegetable.cpp in Sources */,
 				BB6838C82BA751D5008923B0 /* main.cpp in Sources */,
 				BB6838D02BA75221008923B0 /* Plant.cpp in Sources */,
 			);
