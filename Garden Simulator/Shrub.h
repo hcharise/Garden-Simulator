@@ -9,8 +9,8 @@ Final Project - Demonstration of Inheritance and Polymorphism
 Garden Simulator
 3/26/2024
  
-DESCRIPTION
- 
+ This program simulates a garden, allowing the user to care for and grow various plant types. The Plant class is a base class, with derived classes for Flowers, Vegetables, and Shrubs. Each of the derived classes has modified data members and member functions to monitor and adjust the plant's health, such as watering, harvesting, etc. The program's main file simulates the passing of time for a given number of weeks, printing the garden's current state each week before allowing the user to care for their plants as needed.
+
 Shrub.H // NEED TO UPDATE THIS IN ALL FILES
 
 */
@@ -18,66 +18,25 @@ Shrub.H // NEED TO UPDATE THIS IN ALL FILES
 #ifndef SHRUB_H
 #define SHRUB_H
 
-#include <stdio.h>
 #include "Plant.h"
 
 class Shrub : public Plant {
 
 public:
     // CONSTRUCTOR
-    Shrub(string enteredName)
-    : Plant(enteredName), branches{0} {
-        cout << "a shrub called " << Plant::getPlantName() << "!\n";
-    } // end Shrub() constructor
+    Shrub(string enteredName);
     
-    virtual void printStage() {
-        Plant::printStage();
-        cout << setw(22) << "Number of Branches = " << branches << "\n";
-    } // end printStage()
+    virtual void printStage();
 
-    virtual void printCareOptions(int plantNumber) {
-        Plant::printCareOptions(plantNumber);
-        cout << "    4 - Prune Branches\n";
-    } // end printCareOptions()
+    virtual void printCareOptions(int plantNumber);
     
-    virtual int careFor(int plantNumber) {
-        printCareOptions(plantNumber);
-        int chosenAction = Plant::careFor(plantNumber);
-
-        while (chosenAction != 0) {
-
-            switch (chosenAction) {
-                case(4):
-                    pruneBranches();
-                    break;
-                default:
-                    break;
-            }
-            chosenAction = Plant::careFor(plantNumber);
-        }
-        return 0; // unused return value
-    }
+    virtual int careFor(int plantNumber);
     
-    void addBranch() {
-        branches = branches + 1;
-    }
+    void addBranch();
     
-    void pruneBranches() {
-        cout << "   * Pruned " << branches << " brances!";
-        branches = 0;
-        cout << " Branches = " << branches << " *\n";
-    }
+    void pruneBranches();
     
-    virtual void grow() {
-        srand((int)time(0));
-        if (getWeedCount() < 4 && getFertilizerLevel() > 0 && getFertilizerLevel() < 6 && getWaterLevel() > 0 && getWaterLevel() < 8) {
-            addHeight(2);
-            if (getHeight() > 2 && rand() % 2 == 0) {
-                addBranch();
-            }
-        }
-        passTime();
-    }
+    virtual void grow();
 
 private:
     int branches;

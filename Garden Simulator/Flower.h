@@ -9,75 +9,34 @@ Final Project - Demonstration of Inheritance and Polymorphism
 Garden Simulator
 3/26/2024
  
-DESCRIPTION
- 
-Flower.H // NEED TO UPDATE THIS IN ALL FILES
+ This program simulates a garden, allowing the user to care for and grow various plant types. The Plant class is a base class, with derived classes for Flowers, Vegetables, and Shrubs. Each of the derived classes has modified data members and member functions to monitor and adjust the plant's health, such as watering, harvesting, etc. The program's main file simulates the passing of time for a given number of weeks, printing the garden's current state each week before allowing the user to care for their plants as needed.
+
+Flower.H
 
 */
 
 #ifndef FLOWER_H
 #define FLOWER_H
 
-#include <stdio.h>
 #include "Plant.h"
 
 class Flower : public Plant {
 
 public:
     // CONSTRUCTOR
-    Flower(string enteredName)
-    : Plant(enteredName), blooms{0} {
-        cout << "a flower called " << Plant::getPlantName() << "!\n";
-    } // end Flower() constructor
+    Flower(string enteredName);
     
-    virtual void printStage() {
-        Plant::printStage();
-        cout << setw(22) << "Number of Blooms = " << blooms << "\n";
-    } // end printStage()
+    virtual void printStage();
 
-    virtual void printCareOptions(int plantNumber) {
-        Plant::printCareOptions(plantNumber);
-        cout << "    4 - Cut Blooms\n";
-    } // end printCareOptions()
+    virtual void printCareOptions(int plantNumber);
     
-    virtual int careFor(int plantNumber) {
-        printCareOptions(plantNumber);
-        int chosenAction = Plant::careFor(plantNumber);
-
-        while (chosenAction != 0) {
-
-            switch (chosenAction) {
-                case(4):
-                    cutBlooms();
-                    break;
-                default:
-                    break;
-            }
-            chosenAction = Plant::careFor(plantNumber);
-        }
-        return 0; // unused return value
-    }
+    virtual int careFor(int plantNumber);
     
-    void addBloom() {
-        blooms = blooms + 1;
-    }
+    void addBloom();
     
-    void cutBlooms() {
-        cout << "   * Cut " << blooms << " blooms!";
-        blooms = 0;
-        cout << " Blooms = " << blooms << " *\n";
-    }
+    void cutBlooms();
     
-    virtual void grow() {
-        srand((int)time(0));
-        if (getWeedCount() < 2 && getFertilizerLevel() > 0 && getFertilizerLevel() < 4 && getWaterLevel() > 1 && getWaterLevel() < 5) {
-            addHeight(1);
-            if (getHeight() > 2 && rand() % 3 == 0) {
-                addBloom();
-            }
-        }
-        passTime();
-    }
+    virtual void grow();
 
 private:
     int blooms;
