@@ -20,26 +20,34 @@ Vegetable.H
 
 #include "Plant.h"
 
+// Vegetable derived class declaration
 class Vegetable : public Plant {
 
 public:
     // CONSTRUCTOR
-    Vegetable(string enteredName);
+    Vegetable(string enteredName); // creates a vegetable, sets name, and initializes other valuees to 0, prints message notifying user of planted vegetable
     
+    // Using base class function, prints plant stats, then prints harvest
     virtual void printStage();
 
+    // Using base calss function, prints plant care options, then prints Harvest Vegetables
     virtual void printCareOptions(int plantNumber);
     
+    // Using base class function, calls printCareOptions(), gets user's choice of action and calls that action
     virtual int careFor(int plantNumber);
     
+    // Adds height and veggies if conditions are idea for vegetable
+    virtual void grow();
+    
+    // Adds 1 to number of veggiees
     void addVeggie();
     
+    // Removes all veggies, prints message notifying user
     void harvestVeggies();
     
-    virtual void grow();
 
 private:
-    int veggies;
+    int veggies; // the number of veggies the vegetable currently has harvestable
 };
 
 #endif /* VEGETABLE_H */

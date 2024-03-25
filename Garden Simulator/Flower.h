@@ -18,28 +18,37 @@ Flower.H
 #ifndef FLOWER_H
 #define FLOWER_H
 
-#include "Plant.h"
+#include "Plant.h" // Include the base class
 
+// Flower derived class declaration
 class Flower : public Plant {
 
 public:
-    // CONSTRUCTOR
-    Flower(string enteredName);
     
+    // CONSTRUCTOR
+    Flower(string enteredName); // creates a flower, sets name, and initializes other values to 0, prints message notifying user of planted flower
+    
+    // Using base class function, prints plant stats, then prints blooms
     virtual void printStage();
 
+    // Using base class function, prints plant care options, then prints Cut Blooms
     virtual void printCareOptions(int plantNumber);
     
+    // Using base class function, calls printCareOptions(), gets user's choice of action and calls that action
     virtual int careFor(int plantNumber);
     
-    void addBloom();
-    
-    void cutBlooms();
-    
+    // Adds height and blooms if conditions are ideal for flower
     virtual void grow();
 
+    // Adds 1 to number of blooms
+    void addBloom();
+    
+    // Removes all blooms, prints message notifying user
+    void cutBlooms();
+    
+
 private:
-    int blooms;
+    int blooms; // the number of blooms the flower currently has
 };
 
 #endif /* FLOWER_H */
