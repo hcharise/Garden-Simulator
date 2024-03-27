@@ -15,7 +15,6 @@ Main.CPP
 
 */
 
-
 #include <iostream> // For inputting and outputting to user
 #include <vector> // For creating a Plant vector to iterate through
 
@@ -29,12 +28,12 @@ using std::vector; // For creating a Plant vector
 // Test program for the Plant and derived classes
 int main() {
     
-    const int MAX_WEEKS = 5; // Number of weeks/repetitions
+    const int MAX_WEEKS = 3; // Number of weeks/repetitions
     
     // Print the intro banner
     cout << "----------------------------------------------------\n"
-         << "             Garden-Like-A-Granny Game              "
-        << "----------------------------------------------------\n\n";
+         << "                  Garden Simulator                  \n"
+         << "----------------------------------------------------\n\n";
     
     // Plant a flower and create pointer to it
     Flower sunflower("Sunflower");

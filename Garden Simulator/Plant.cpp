@@ -100,8 +100,10 @@ int Plant::careFor(int plantNumber) {
 void Plant::passTime() {
     srand((int)time(0));
     
-    // Always removes water
-    waterLevel = waterLevel - 1;
+    // Always removes water (if there is water to remove)
+    if (waterLevel > 0) {
+        waterLevel = waterLevel - 1;
+    }
     
     // Sometimes (randomly) removes fertilizer
     if (rand() % 2 == 0 && fertilizerLevel > 0) {

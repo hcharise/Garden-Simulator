@@ -63,7 +63,7 @@ void Flower::grow() {
     srand((int)time(0));
     
     // Check for ideal flower conditions
-    if (getWeedCount() < 2 && getFertilizerLevel() > 0 && getFertilizerLevel() < 4 && getWaterLevel() > 1 && getWaterLevel() < 5) {
+    if (getWaterLevel() > 1 && getWaterLevel() < 5 && getFertilizerLevel() > 0 && getFertilizerLevel() < 4 && getWeedCount() < 2) {
         addHeight(1);
         // If plant is tall enough, sometimes (randomly) add flower
         if (getHeight() > 2 && rand() % 3 == 0) {

@@ -63,7 +63,7 @@ void Shrub::grow() {
     srand((int)time(0));
     
     // Check for ideal shrub conditions
-    if (getWeedCount() < 4 && getFertilizerLevel() > -1 && getFertilizerLevel() < 6 && getWaterLevel() > 0 && getWaterLevel() < 8) {
+    if (getWaterLevel() > 0 && getWaterLevel() < 8 && getFertilizerLevel() > -1 && getFertilizerLevel() < 6 && getWeedCount() < 4) {
         addHeight(2);
         // If plant is tall enough, sometimes (randomly) add branches
         if (getHeight() > 2 && rand() % 2 == 0) {
@@ -84,5 +84,3 @@ void Shrub::pruneBranches() {
     branches = 0;
     cout << " Branches = " << branches << " *\n";
 } // end pruneBranches()
-
-

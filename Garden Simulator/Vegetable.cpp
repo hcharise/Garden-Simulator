@@ -63,7 +63,7 @@ void Vegetable::grow() {
     srand((int)time(0));
     
     // Check for ideal vegetable conditions
-    if (getWeedCount() < 3 && getFertilizerLevel() > 1 && getFertilizerLevel() < 5 && getWaterLevel() > 2 && getWaterLevel() < 6) {
+    if (getWaterLevel() > 2 && getWaterLevel() < 6 && getFertilizerLevel() > 1 && getFertilizerLevel() < 5 && getWeedCount() < 3) {
         addHeight(2);
         // If plant is tall enough, sometimes (randomly) add veggie
         if (getHeight() > 3 && rand() % 2 == 0) {
