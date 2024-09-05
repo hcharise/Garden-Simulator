@@ -1,0 +1,1 @@
+A C++ application with modern object-oriented design to simulate the caretaking of a garden. Implements polymorphism and inheritance patterns in order to efficiently and cleanly provide gardener actions, with randomness imitating nature’s role.
